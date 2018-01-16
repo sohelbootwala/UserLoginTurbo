@@ -4,10 +4,26 @@ const router = vertex.router()
 
 /*  This is a sample API route. */
 
-router.post('/:register', function(req, res){
+router.post('/register', function(req, res){
 
 
 		turbo.createUser(req.body)
+		.then(data => {
+			res.json({
+				confirmation: 'success',
+				data: data
+			})
+		})
+		.catch(err => {
+				res.json({
+						confirmation: 'fail',
+						message: err.message
+				})
+		})
+})
+
+router.post('/login', function(req, res){
+		turbo.login(req.body)
 		.then(data => {
 			res.json({
 				confirmation: 'success',
