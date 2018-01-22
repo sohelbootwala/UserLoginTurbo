@@ -6,7 +6,7 @@ const router = vertex.router()
 
 router.post('/register', function(req, res){
 
-
+// This will persist the data to the project
 		turbo.createUser(req.body)
 		.then(data => {
 			res.json({
