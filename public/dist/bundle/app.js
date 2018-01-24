@@ -21321,12 +21321,17 @@ var Admin = function (_Component) {
 		}
 
 		_createClass(Admin, [{
-				key: "render",
+				key: 'componentDidMount',
+				value: function componentDidMount() {
+						console.log('Admin component did mount');
+				}
+		}, {
+				key: 'render',
 				value: function render() {
 						return _react2.default.createElement(
-								"div",
-								{ className: "container" },
-								"This is the Admind Container!"
+								'div',
+								{ className: 'container' },
+								'This is the Admind Container!'
 						);
 				}
 		}]);

@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 class Admin extends Component {
 
-		
+		 componentDidMount(){
+		 		console.log('Admin component did mount')
+		 }
 
 		render(){
 				return (
