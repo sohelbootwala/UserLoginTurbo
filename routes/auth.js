@@ -57,11 +57,24 @@ router.get('/currentuser', function(req, res){
 		return
 	}
 	//binding the session key
-	res.json({
-			confirmation: 'success',
-			user: req.vertexSession.user
-	})
+	// res.json({
+	// 		confirmation: 'success',
+	// 		user: req.vertexSession.user
+	// })
 
+	turbo.fetchOne('user', req.vertexSession.user.id)
+	.then(data => {
+			res.json({
+					confirmation: 'sucess',
+					user: data
+			})
+	})
+	.catch(err => {
+			res.json({
+					confirmation: 'fail',
+					message: err.message
+			})
+	})
 
 })
 
